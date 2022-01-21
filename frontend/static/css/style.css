@@ -1,0 +1,13 @@
+* {
+  font-family: "Raleway", monospace;
+  color: #00adb5;
+  background-color: #222831;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark1: #222831;
+  --primary: #00adb5;
+}
