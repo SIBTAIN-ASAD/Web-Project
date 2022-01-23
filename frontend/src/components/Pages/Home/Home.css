@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", monospace;
+}
+
+:root {
+  --dark_1: #222831;
+  --dark_2: #393e46;
+  --primary: #00adb5;
+  --body: #eeeeee;
+  --ff: "Raleway", monospace;
+}
+
+/* Home Page */
+.home-wrapper {
+  /* background-image: linear-gradient(34deg, #039ae6a5, #dcdcddd4), */
+  /* url(../images/pu_oc.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--body);
+  display: flex;
+  justify-content: center;
+}
+
+.home-container {
+  height: 100vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.home-logo-container {
+  width: 35%;
+  font-size: 25px;
+  font-family: var(--ff);
+  font-weight: bold;
+}
+
+.home-logo-title {
+  color: var(--primary);
+}
+
+.home-logo-text {
+  color: var(--dark_2);
+}
+
+.nav-menu-container {
+  width: 65%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navmenu {
+  display: flex;
+}
+
+.nav {
+  border: 2px solid yellow;
+  display: flex;
+}
+
+.navitem {
+  margin: 0 0 0 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 100%;
+  list-style-type: none;
+  padding: 5px 10px;
+  color: var(--dark_2);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.navitem:hover {
+  color: #00adb5;
+}
+
+.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.center-items-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tagline-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tagline {
+  display: flex;
+  color: var(--dark_2);
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.username-tagline {
+  color: var(--primary);
+}
+
+.introlines-container {
+  display: flex;
+  width: 50%;
+}
+
+.introlines {
+  padding: 20px 0;
+  display: flex;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+.explore-btn-container {
+  display: flex;
+  text-align: center;
+}
+
+.explore-btn {
+  text-align: center;
+  height: 40px;
+  width: 125px;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: var(--body);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.explore-btn:hover {
+  /* border: 2px solid var(--body); */
+  color: var(--body);
+  background-color: #03848a;
+}
+/* Home Page */
