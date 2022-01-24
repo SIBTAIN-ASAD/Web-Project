@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link, Route } from "react-router-dom";
 
@@ -10,6 +10,9 @@ import notif_vect from "../../../Illustrations/utils/notification.svg";
 import "./Explore.css";
 
 const Explore = (props) => {
+  useEffect(() => {
+    document.title = `Explore | FCIT Help Desk`;
+  });
   return (
     <div className="explore-wrapper">
       <div className="explore-container">

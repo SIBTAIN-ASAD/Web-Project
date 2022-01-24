@@ -1,20 +1,20 @@
 import React from "react";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import "./Welcome.css";
 import welcome_vect from "../../../Illustrations/welcome-c.svg";
-import pu_oc from  "../../../Illustrations/pu_oc.png";
+import pu_oc from "../../../Illustrations/pu_oc.png";
 
 const bg_style = {
-  "backgroundImage": `url(${pu_oc})`,
-  backgroundPosition:"fixed",
-  backgroundRepeat:"no-repeat",
-  backgroundSize : "cover",
-  
-
-
-}
+  backgroundImage: `url(${pu_oc})`,
+  backgroundPosition: "fixed",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+};
 const Welcome = (props) => {
+  useEffect(() => {
+    document.title = `Welcome | FCIT Help Desk`;
+  });
   return (
     <div style={bg_style}>
       <div className="welcome-wrapper">
@@ -29,7 +29,7 @@ const Welcome = (props) => {
             </div>
             <div className="btn-container">
               <Link to="/login">
-              <button className="btn login">login</button>
+                <button className="btn login">login</button>
               </Link>
               <button className="btn register">register</button>
             </div>

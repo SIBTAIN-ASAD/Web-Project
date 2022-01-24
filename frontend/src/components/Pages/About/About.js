@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Route, Link } from "react-router-dom";
 
@@ -6,6 +6,9 @@ import about_us from "../../../Illustrations/aboutus.svg";
 import "./About.css";
 
 const About = (props) => {
+  useEffect(() => {
+    document.title = `About | FCIT Help Desk`;
+  });
   return (
     <div className="about-wrapper">
       <div className="about-container">

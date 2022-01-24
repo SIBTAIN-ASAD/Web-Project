@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./Team.css";
 
@@ -14,6 +14,9 @@ import sm_github from "../../../Illustrations/github.svg";
 import { Link } from "react-router-dom";
 
 const Team = (props) => {
+  useEffect(() => {
+    document.title = `Team | FCIT Help Desk`;
+  });
   return (
     <div className="team-wrapper">
       <div className="team-container">
@@ -67,32 +70,20 @@ const Team = (props) => {
               </div>
               <div className="tm-social-media-links">
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_linkedin}
-                    alt=""
-                    className="tm-sm-github"
-                  />
+                  <img src={sm_linkedin} alt="" className="tm-sm-github" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_github}
-                    alt=""
-                    className="tm-sm-linkedin"
-                  />
+                  <img src={sm_github} alt="" className="tm-sm-linkedin" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_gplus}
-                    alt=""
-                    className="tm-sm-gmail"
-                  />
+                  <img src={sm_gplus} alt="" className="tm-sm-gmail" />
                 </a>
               </div>
             </div>
 
             <div className="tm-card">
               <div className="tm-avatar-container">
-                <img src={ avatar_awais } alt="" srcSet="" />
+                <img src={avatar_awais} alt="" srcSet="" />
               </div>
 
               <div className="tm-skill">
@@ -109,18 +100,10 @@ const Team = (props) => {
                   <img src={sm_github} alt="" className="tm-sm-github" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_github}
-                    alt=""
-                    className="tm-sm-linkedin"
-                  />
+                  <img src={sm_github} alt="" className="tm-sm-linkedin" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_gplus}
-                    alt=""
-                    className="tm-sm-gmail"
-                  />
+                  <img src={sm_gplus} alt="" className="tm-sm-gmail" />
                 </a>
               </div>
             </div>
@@ -141,25 +124,13 @@ const Team = (props) => {
               </div>
               <div className="tm-social-media-links">
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_linkedin}
-                    alt=""
-                    className="tm-sm-github"
-                  />
+                  <img src={sm_linkedin} alt="" className="tm-sm-github" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_github}
-                    alt=""
-                    className="tm-sm-linkedin"
-                  />
+                  <img src={sm_github} alt="" className="tm-sm-linkedin" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_gplus}
-                    alt=""
-                    className="tm-sm-gmail"
-                  />
+                  <img src={sm_gplus} alt="" className="tm-sm-gmail" />
                 </a>
               </div>
             </div>
@@ -180,25 +151,13 @@ const Team = (props) => {
               </div>
               <div className="tm-social-media-links">
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_linkedin}
-                    alt=""
-                    className="tm-sm-github"
-                  />
+                  <img src={sm_linkedin} alt="" className="tm-sm-github" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_github}
-                    alt=""
-                    className="tm-sm-linkedin"
-                  />
+                  <img src={sm_github} alt="" className="tm-sm-linkedin" />
                 </a>
                 <a href="#" className="sm-link">
-                  <img
-                    src={sm_gplus}
-                    alt=""
-                    className="tm-sm-gmail"
-                  />
+                  <img src={sm_gplus} alt="" className="tm-sm-gmail" />
                 </a>
               </div>
             </div>

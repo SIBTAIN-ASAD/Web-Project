@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Home.css";
 
 const Home = (props) => {
+  useEffect(() => {
+    document.title = `Home | FCIT Help Desk`;
+  });
+  
   return (
     // <div>
       <div className="home-wrapper">

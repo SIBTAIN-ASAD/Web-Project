@@ -19,7 +19,12 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(less|sass|scss)$/,
+        exclude: /node_modules/,
+        use: ["less-loader", "raw-loader"],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
@@ -32,11 +37,13 @@ module.exports = {
           },
         ],
       },
+      
     ],
   },
   optimization: {
     minimize: true,
   },
+
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {

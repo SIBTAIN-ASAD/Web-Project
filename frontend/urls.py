@@ -11,4 +11,7 @@ urlpatterns = [
     path('contact/', index),
     path('team/', index),
     path('main/', index),
+    path('cgpacalculator/', index),
+    path('cgpacalculator/gpa', index),
+    path('cgpacalculator/cgpa', index),
 ]

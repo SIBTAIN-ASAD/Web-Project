@@ -1,13 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { Link } from "react-router-dom";
+
+import { GreenAlert, RedAlert } from "../Elements/Alert";
+
+import { useFormik } from "formik";
 
 import register_vect from "../../../Illustrations/register.svg";
 import "./Register.css";
+import CSRFToken from "../Elements/CSRFtoken";
+
+function readBody(xhr) {
+  var data;
+  if (!xhr.responseType || xhr.responseType === "text") {
+    data = xhr.responseText;
+  } else if (xhr.responseType === "document") {
+    data = xhr.responseXML;
+  } else {
+    data = xhr.response;
+  }
+  return data;
+}
 
 const Register = (props) => {
+  useEffect(() => {
+    document.title = `Register | FCIT Help Desk`;
+  });
+  const formik = useFormik({
+    initialValues: { fname: "", lname: "", fmail: "", password: "" },
+    onSubmit: (values) => {
+      let url = "http://127.0.0.1:8000/apirfw/auth/register/";
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+      xhr.setRequestHeader("Content-Type", "application/json");
+
+      xhr.onreadystatechange = (props) => {
+        if (xhr.readyState === 4) {
+          if (xhr.readyState === 4 && xhr.status == 200) {
+            console.log("Status - : " + xhr.status);
+            console.log(readBody(xhr));
+            console.log("Response - : " + xhr.responseText);
+          }
+        }
+      };
+
+      alert(JSON.stringify(values, null, 2));
+      console.log(JSON.stringify(values, null, 2));
+      let register_data = JSON.stringify(values, null, 2);
+      xhr.send(register_data);
+      console.log(xhr);
+      var data;
+      fetch(url, {
+        method: 'post', // Default is 'get'
+        body: JSON.stringify(values),
+        mode: 'cors',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      })
+      .then(response => response.json())
+      .then(json => data = console.log('Response', json))
+    },
+  });
+
   return (
     <div>
-      {" "}
+      {/* <RedAlert msg="Invalid Registration Details" /> */}
+      {/* <GreenAlert msg="Logged In Successfully" /> */}
       <div className="register-wrapper">
         <div className="register-container-main">
           <div className="register-logo-container">
@@ -24,15 +83,20 @@ const Register = (props) => {
               <div className="register-title">
                 <span> Register Here </span>
               </div>
-              <form method="post" className="ip-container">
+              <form onSubmit={formik.handleSubmit} className="ip-container">
+                {/* <CSRFToken /> */}
+
                 <div className="name-container">
                   <div className="fname-ip-container">
                     <span className="fname-ip-label">First Name</span>
                     <input
+                      onChange={formik.handleChange}
+                      value={formik.values.fname}
                       type="text"
-                      className="fname-ip"
+                      className="fname"
                       name="fname"
-                      placeholder="Muhammad"
+                      id="fname"
+                      placeholder="First Name"
                       required
                     />
                   </div>
@@ -40,10 +104,13 @@ const Register = (props) => {
                   <div className="lname-ip-container">
                     <span className="lname-ip-label">Last Name</span>
                     <input
+                      onChange={formik.handleChange}
+                      value={formik.values.lname}
                       type="text"
-                      className="lname-ip"
+                      className="lname"
                       name="lname"
-                      placeholder="Ans"
+                      id="lname"
+                      placeholder="Last Name"
                       required
                     />
                   </div>
@@ -52,10 +119,13 @@ const Register = (props) => {
                 <div className="gmail-ip-container">
                   <span className="gmail-ip-label">Your FCIT Gmail</span>
                   <input
+                    onChange={formik.handleChange}
+                    value={formik.values.fmail}
                     type="email"
-                    className="gmail-ip"
-                    name="gmail"
-                    placeholder="bitf19m024@pucit.edu.pk"
+                    className="fmail"
+                    name="fmail"
+                    id="fmail"
+                    placeholder="xxxxxxxxxx@pucit.edu.pk"
                     required
                   />
                 </div>
@@ -68,6 +138,9 @@ const Register = (props) => {
                     type="password"
                     className="password"
                     name="password"
+                    id="password"
+                    value={formik.values.Password}
+                    onChange={formik.handleChange}
                     placeholder="enter your password here..."
                     required
                   />

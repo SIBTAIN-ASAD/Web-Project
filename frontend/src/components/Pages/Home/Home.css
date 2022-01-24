@@ -150,7 +150,6 @@
 }
 
 .explore-btn:hover {
-  /* border: 2px solid var(--body); */
   color: var(--body);
   background-color: #03848a;
 }
