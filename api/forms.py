@@ -9,7 +9,7 @@ from .models import FCITian
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = FCITian
-        fields = ('fmail',)
+        fields = ('fmail', )
 
 
 class CustomUserChangeForm(UserChangeForm):

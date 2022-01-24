@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark_1: #222831;
+  --dark_2: #393e46;
+  --primary: #00adb5;
+  --body: #eeeeee;
+  --ff: "Raleway", monospace;
+}
+
+/* Welcome page */
+.welcome-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#021231e3, #0a2022da);
+  display: flex;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
+
+.welcome-container {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: var(--ff);
+  font-weight: bold;
+}
+
+.logo-title {
+  color: var(--primary);
+}
+
+.logo-text {
+  color: var(--body);
+}
+
+.center-items {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.il-container {
+  width: 45vw;
+  margin: 10px 0px;
+}
+
+.btn-container {
+  display: flex;
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  height: 40px;
+  width: 120px;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: lighter;
+  background-color: var(--primary);
+  color: var(--body);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.login {
+  margin-right: 30px;
+}
+
+.btn:hover {
+  border: 2px solid var(--body);
+  color: var(--body);
+  background-color: transparent;
+}

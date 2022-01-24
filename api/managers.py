@@ -9,19 +9,20 @@ class CustomFCITianManager(BaseUserManager):
     for authentication instead of usernames.
     """
 
-    def create_user(self, fmail, password, **extra_fields):
+    def create_user(self, fname, lname, fmail, password, **extra_fields):
         """
         Create and save a User with the given email and password.
         """
         if not fmail:
             raise ValueError(_('The Email must be set'))
-        email = self.normalize_email(fmail)
-        user = self.model(fmail=fmail, **extra_fields)
+        fmail = self.normalize_email(fmail)
+        user = self.model(fmail=fmail, fname=fname,
+                          lname=lname, **extra_fields)
         user.set_password(password)
         user.save()
         return user
 
-    def create_superuser(self, fmail, password, **extra_fields):
+    def create_superuser(self, fname, lname, fmail, password, **extra_fields):
         """
         Create and save a SuperUser with the given email and password.
         """
@@ -33,4 +34,4 @@ class CustomFCITianManager(BaseUserManager):
             raise ValueError(_('Superuser must have is_staff=True.'))
         if extra_fields.get('is_superuser') is not True:
             raise ValueError(_('Superuser must have is_superuser=True.'))
-        return self.create_user(fmail, password, **extra_fields)
+        return self.create_user(fname, lname, fmail, password, **extra_fields)

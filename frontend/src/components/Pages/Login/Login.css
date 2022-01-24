@@ -1,0 +1,189 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark_1: #222831;
+  --dark_2: #393e46;
+  --primary: #00adb5;
+  --body: #eeeeee;
+  --ff: "Raleway", monospace;
+}
+
+/* Login Page */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body);
+}
+
+.login-container-main {
+  height: 100%;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-logo-container {
+  font-size: 25px;
+  font-weight: bold;
+  height: 10%;
+  align-items: center;
+  display: flex;
+}
+
+.login-logo-title {
+  display: flex;
+  color: var(--primary);
+}
+
+.login-logo-text {
+  display: flex;
+  color: var(--dark_2);
+}
+
+.login-container {
+  margin-top: 5vh;
+  background-color: var(--dark_2);
+  background-color: var(--primary);
+  border-radius: 0 10px 10px 0;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+}
+
+.login-box {
+  margin: 5px 0 5px 5px;
+  display: flex;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark_1);
+}
+
+.login-title {
+  font-size: 2.3em;
+  display: flex;
+  height: 20%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--body);
+}
+
+.ip-container {
+  height: 70%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gmail-ip-container,
+.password-ip-container {
+  display: flex;
+  width: 100%;
+  height: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.gmail-ip-label,
+.password-ip-label {
+  font-size: 18px;
+  padding: 5px 0;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.gmail-ip-container input,
+.password-ip-container input {
+  height: 40px;
+  width: 100%;
+  background-color: var(--dark_2);
+  display: flex;
+  padding: 5px 15px;
+  color: var(--primary);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+.gmail-ip-container input::placeholder,
+.password-ip-container input::placeholder {
+  font-size: 15px;
+  line-height: -2;
+}
+
+.gmail-ip-container input:focus,
+.password-ip-container input:focus {
+  border: 1px solid var(--primary);
+}
+
+.forgot-pass,
+.not-joined {
+  display: flex;
+  color: white;
+  height: 15%;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+.reset a,
+.reg-here a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration-style: none;
+  margin-left: 5px;
+}
+
+.login-il-container {
+  display: flex;
+  width: 60%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.login-il-container img {
+  width: 70%;
+}
+
+.login-btn-container {
+  display: flex;
+  height: 15%;
+  align-items: center;
+}
+
+.login-btn {
+  text-align: center;
+  height: 40px;
+  width: 100px;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: var(--body);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.login-btn:hover {
+  color: var(--body);
+  background-color: var(--dark_2);
+}

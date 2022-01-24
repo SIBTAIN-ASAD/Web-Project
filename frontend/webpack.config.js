@@ -16,11 +16,34 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(less|sass|scss)$/,
+        exclude: /node_modules/,
+        use: ["less-loader", "raw-loader"],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
+      
     ],
   },
   optimization: {
     minimize: true,
   },
+
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
@@ -29,5 +52,4 @@ module.exports = {
       },
     }),
   ],
-  
 };
